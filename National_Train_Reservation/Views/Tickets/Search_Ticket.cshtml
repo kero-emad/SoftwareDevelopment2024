@@ -1,0 +1,200 @@
+﻿@model National_Train_Reservation.Models.Tickets
+
+@{
+    ViewData["Title"] = "Search for Ticket";
+}
+
+
+
+
+
+    <body style="background-image: url('../Images/tickets.jpg');background-size:cover;"></body>
+    @if (User.Identity.IsAuthenticated)
+{
+    <h1 style="color:black">Search for Ticket</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-5">
+            <form asp-action="Search_Ticket" asp-controller="Tickets" method="post">
+                    <div class="text-light"></div>
+
+                <div class="form-group">
+                    <label asp-for="Pickup_Station" class="control-label">From</label>
+                    <select name="From" asp-for="Pickup_Station" class="form-control" required>
+                            <option selected>
+                                        Cairo
+                                    </option>
+                                    <option>
+                                        Giza
+                                    </option>
+                                    <option>
+                                        Banha
+                                    </option>
+                                    <option>
+                                        Alexandria
+                                    </option>
+                                    <option>
+                                        Damanhour
+                                    </option>
+                                    <option>
+                                        Matrouh
+                                    </option>
+                                    <option>
+                                        Mansoura
+                                    </option>
+                                    <option>
+                                        Kafr El-Sheikh
+                                    </option>
+                                    <option>
+                                        Tanta
+                                    </option>
+                                    <option>
+                                        Shebeen El-Kom
+                                    </option>
+                                    <option>
+                                        Damietta
+                                    </option>
+                                    <option>
+                                        Port Said
+                                    </option>
+                                    <option>
+                                        Ismailia
+                                    </option>
+                                    <option>
+                                        Suez
+                                    </option>
+                                    <option>
+                                        Zagazig
+                                    </option>
+                                    <option>
+                                        Beni suef
+                                    </option>
+                                     <option>
+                                       Faiyum
+                                     </option>
+                                    <option>
+                                        Minya
+                                    </option>
+                                    <option>
+                                       Asyut        
+                                    </option>
+                                    <option>
+                                        Sohag
+                                    </option>
+                                    <option>
+                                        Qena
+                                    </option>
+                                    <option>
+                                        Luxor
+                                    </option>
+                                    <option>
+                                        Aswan
+                                    </option>
+
+                                </select>
+                    <span asp-validation-for="Pickup_Station" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Destination" class="control-label">To</label>
+                    <select name="To"asp-for="Destination" class="form-control" required>
+                            <option>
+                                        Cairo
+                                    </option>
+                                    <option>
+                                        Giza
+                                    </option>
+                                    <option>
+                                        Banha
+                                    </option>
+                                    <option selected>
+                                        Alexandria
+                                    </option>
+                                    <option>
+                                        Damanhour
+                                    </option>
+                                    <option>
+                                        Matrouh
+                                    </option>
+                                    <option>
+                                        Mansoura
+                                    </option>
+                                    <option>
+                                        Kafr El-Sheikh
+                                    </option>
+                                    <option>
+                                        Tanta
+                                    </option>
+                                    <option>
+                                        Shebeen El-Kom
+                                    </option>
+                                    <option>
+                                        Damietta
+                                    </option>
+                                    <option>
+                                        Port Said
+                                    </option>
+                                    <option>
+                                        Ismailia
+                                    </option>
+                                    <option>
+                                        Suez
+                                    </option>
+                                    <option>
+                                        Zagazig
+                                    </option>
+                                    <option>
+                                        Beni suef
+                                    </option>
+                                     <option>
+                                       Faiyum
+                                     </option>
+                                    <option>
+                                        Minya
+                                    </option>
+                                    <option>
+                                       Asyut        
+                                    </option>
+                                    <option>
+                                        Sohag
+                                    </option>
+                                    <option>
+                                        Qena
+                                    </option>
+                                    <option>
+                                        Luxor
+                                    </option>
+                                    <option>
+                                        Aswan
+                                    </option>
+
+                                </select>
+                    <span asp-validation-for="Destination" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Time_Pickup" class="control-label">Date</label>
+                    <input type="date" name="Date" class="form-control" required />
+                    <span asp-validation-for="Time_Pickup" class="text-danger"></span>
+                </div>
+                
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <br /><br />
+
+  
+
+<div>
+            
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    }
+
+                       else{
+                           <p style="color:brown">Don't Have an account ?? <a asp-controller="Users" asp-action="SignUp" style="color:white">SignUp</a></p>
+            <p style="color:brown">Already Have an account ?? <a asp-controller="Users" asp-action="SignIn" style="color:white">SignIn</a></p>
+                       }

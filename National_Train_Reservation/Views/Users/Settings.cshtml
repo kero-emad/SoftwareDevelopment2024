@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Settings";
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <head>
+        <link rel="stylesheet" href="~/css/Settings.css">
+    </head>
+    <div class="container">
+    <form method="POST" asp-action="Settings" asp-controller="Users">
+            <div class="user-box">
+        <label>
+            Old password
+        </label>
+            <input type="password" name="oldpass" class="input" required/><br />
+           </div>
+            <div class="user-box">
+        <label>
+            New password
+        </label>
+            <input type="password" name="newpass" class="input" required/><br />
+            </div>
+            <div class="user-box">
+        <label>
+            Confirm password
+        </label>
+            <input type="password" name="confirmpass" class="input" required/><br />
+            </div>
+                <div class="submit-btn">
+                <input type="submit" value="change" class="submit"/>
+                <span></span>
+                </div>
+    </form>
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+}
+else
+{
+         <a asp-controller="Users" asp-action="SignIn"> <img src="../Images/login.jpeg" /> </a>
+}

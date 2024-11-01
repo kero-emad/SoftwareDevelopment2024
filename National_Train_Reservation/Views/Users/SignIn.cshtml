@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>National Train Reservation</title>
+  <link rel="stylesheet" href="~/css/signin.css">
+</head>
+<body>
+    <div class="background">
+        <div class="login-form">
+            <h2>National Train Reservation</h2>
+            <form asp-controller="Users" asp-action="SignIn" method="post">
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Please Enter your Email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password"  placeholder="Please Enter your Password" required>
+
+                <button type="submit">Log in</button>
+            </form>
+        </div>
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Payment";
+}
+<head>
+<link rel="stylesheet" href="~/css/payment.css"/>
+   </head>
+<body>
+    <div class="container">
+    <form method="post" asp-action="Payment" asp-controller="Tickets">
+        <div class="user-box">
+            <input
+            type="text"
+            name="cardNumber"
+            id="card"
+            minlength="16"
+            maxlength="16"
+            placeholder="Enter your card number"
+            required/>
+            <label for="card">Card Number</label>
+    </div>
+    <div class="user-box">
+        <input
+         type="number"
+        name="CVV"
+        id="Cvv"
+        min="100"
+max="999"
+placeholder="Enter CVV number (3 numbers behind the card"
+        required/>
+        <label for="Cvv" >CVV</label>
+
+    </div>
+    <div class="user-box">
+        <input
+        type="date"
+        name="Date"
+        id="date"
+        placeholder="Expire date for card"
+        required/>
+        <label for="date">Date Expiration</label>
+    </div>
+    <div class="user-box">
+        <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter The name of the card owner"
+        required/>
+        <label for="name">Name</label>
+    </div>
+    <div class="user-box">
+       <input
+        type="text"
+        name="phone"
+        id="phone"
+        minlength="11"
+        maxlength="11"
+      required/>
+   <label for="phone">Phone Number</label>
+    </div>
+      <div class="submit-btn">
+      <input type="submit" value="Pay" />
+      <span></span>
+      </div>
+    </form>
+  </body>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })

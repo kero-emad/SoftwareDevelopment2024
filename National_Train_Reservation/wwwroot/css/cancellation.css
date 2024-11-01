@@ -1,0 +1,53 @@
+.txt{
+    color: brown;
+}
+form {
+    flex-direction: column;
+    
+    margin-top: 20px;
+}
+
+
+
+label {
+    margin-right: 5px;
+    font-size: 24px;
+    color: black;
+}
+
+input[type="text"], input[type="date"], input[type="email"], input[type="tel"], input[type="password"] {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px grey;
+    width: 30%;
+}
+
+button[type="submit"] {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /*padding: 10px 20px;
+    margin-top: 10px;*/
+    cursor: pointer;
+    width: 20%;
+    font-size: 24px;
+}
+
+    button[type="submit"]:hover {
+        background-color: #005f6b;
+    }
+
+
+
+#ticketId {
+    margin-left: 14%;
+}
+
+.input-box {
+    height: 30px;
+}
+
+

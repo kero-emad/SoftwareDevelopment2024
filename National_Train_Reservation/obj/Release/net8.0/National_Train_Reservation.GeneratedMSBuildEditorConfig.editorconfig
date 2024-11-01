@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = National_Train_Reservation
+build_property.RootNamespace = National_Train_Reservation
+build_property.ProjectDir = D:\Software Development\section\National_Train_Reservation\National_Train_Reservation\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Software Development\section\National_Train_Reservation\National_Train_Reservation
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Shared/project.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHByb2plY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Tickets/Book.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xCb29rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Tickets/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Tickets/Search_Result.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xTZWFyY2hfUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Tickets/Search_Ticket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xTZWFyY2hfVGlja2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Tickets/Ticket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xUaWNrZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Tickets/View_Tickets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0c1xWaWV3X1RpY2tldHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/AddTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQWRkVGlja2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/AddTrain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQWRkVHJhaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/Complaints_Suggestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ29tcGxhaW50c19TdWdnZXN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/DeleteAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcU2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcU2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/ViewTrains.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcVmlld1RyYWlucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Users/View_Trains.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcVmlld19UcmFpbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Software Development/section/National_Train_Reservation/National_Train_Reservation/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-391o92ptlg

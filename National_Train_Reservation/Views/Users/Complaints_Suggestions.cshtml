@@ -1,0 +1,80 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Complaints & Suggestions";
+}
+@if (User.Identity.IsAuthenticated)
+{
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+    <body style="background-color:white">
+
+
+        <div class="content">
+
+            <div class="container">
+                <h1 class="h1">Complaints, Suggestions and Feedback</h1>
+                <div id="vert">
+                    <div class="vertical" id="everything">
+                        <p><img src="~/Images/undraw-contact.svg" alt="Image" class="img-fluid" width="80%"></p>
+                    </div>
+
+
+
+                    <div class="vertical" id="information">
+
+                        <form method="post" id="contactForm" name="contactForm">
+                            <div class="row">
+                                <div>
+                                    <label>Message Type:</label>
+                                    <select name="type" required>
+                                        <option>Suggestions</option>
+                                        <option>Complaints</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    <label>Subject:</label>
+                                    <input type="text" class="input-box" name="subject" id="subject" placeholder="  Subject" required>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div>
+                                    <label>Details:</label>
+                                    <textarea class="input-box" name="message" id="message" cols="30" rows="7" required placeholder="  Write your message"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                            </div> <br>
+
+                            <div class="row">
+                                <div> <input type="submit" value="Send Message" id="comp" class="btn btn-primary"></div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+}
+else
+{
+         <a asp-controller="Users" asp-action="SignIn"> <img src="../Images/login.jpeg" /> </a>
+}

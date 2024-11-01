@@ -1,0 +1,91 @@
+﻿@using System.Security.Claims
+@using National_Train_Reservation.Data
+@inject ApplicationDBcontext _con
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/National_Train_Reservation.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Search_Ticket"> Search Ticket</a>
+                        </li>
+                        <li class="nav-item1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="View_Tickets">View Tickets</a>
+                        </li>
+                        <li class="nav-item1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Complaints_Suggestions">Complaints&Suggestions</a>
+                        </li>
+                        <li class="nav-item1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Settings">Settings</a>
+                        </li>
+                        <li class="nav-item1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="DeleteAccount">Delete Account</a>
+                        </li>
+                        <li class="nav-item1">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="updatePhoto">Delete Photo</a>
+                        </li>
+                        <li class="nav-item11">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="AddTrain">Add Train</a>
+                        </li>
+                         <li class="nav-item11">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="ViewTrains">Delete Journey</a>
+                        </li>
+                        <li class="nav-item12">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="View_Trains">Add Tickets</a>
+                        </li>
+                       @if (!User.Identity.IsAuthenticated)
+                        {
+                        <li class="nav-item"> 
+                            <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="SignUp"><input type="submit" class="btn1" value="SignUp"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="Signin"> <input type="submit" class="btn2" value="Login"></a>
+                        </li>
+                        }
+                        else{
+                            string Email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                            var res = _con.Users.Where(u => u.Email == Email).FirstOrDefault();
+                            <li class="nav-item13">
+                               Hello @res.User_Fname
+                            </li>
+                       <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="SignOut"> <input type="submit" class="btn2" value="SignOut"></a>
+                        </li>
+                        }
+                    </ul>
+                  
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

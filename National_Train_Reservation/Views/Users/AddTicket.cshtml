@@ -1,0 +1,44 @@
+﻿@using National_Train_Reservation.Models;
+@using National_Train_Reservation.Controllers;
+@using National_Train_Reservation.Data;
+@using System.Security.Claims;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Add Ticket";
+}
+<head>
+    <link rel="stylesheet" href="../css/Add_Ticket.css">
+</head>
+@inject ApplicationDBcontext _con
+@if (User.Identity.IsAuthenticated)
+{
+    string Email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var user = _con.Users.Where(u => u.Email == Email).FirstOrDefault();
+    @if (user.type == "Admin")
+    {
+        <form method="POST" class="form" asp-action="AddTicket" asp-controller="Users">
+
+            <label>Journey ID</label>
+            <input type="text" value=@Context.Request.Query["id"]@ViewBag.Jid name="jourid" class="input" readonly/><br />
+            <label>Car Number</label>
+            <input type="number" name="car" min=1 max=10 class="input" required/><br />
+            <label>Seat Number</label>
+                    <input type="number" name="seat" min=1 max=30 class="input" required/><br />
+            <input type="submit" value="Add Ticket" class="submit"/>
+        </form>
+        @ViewBag.Message
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    }
+    else
+    {
+                <img src="../Images/access.jpeg" />
+    }
+}
+else
+{
+         <a asp-controller="Users" asp-action="SignIn"> <img src="../Images/login.jpeg" /> </a>
+}

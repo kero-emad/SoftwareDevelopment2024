@@ -1,0 +1,78 @@
+﻿@using System.Security.Claims
+@using National_Train_Reservation.Models
+@using National_Train_Reservation.Controllers
+@using National_Train_Reservation.Data
+@using Newtonsoft.Json;
+@using Microsoft.AspNetCore.Mvc;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Trains";
+}
+<head>
+    <title>View Trains</title>
+    <link rel="stylesheet" href="../css/search_result.css">
+</head>
+@inject ApplicationDBcontext _con
+@if (User.Identity.IsAuthenticated)
+{
+    string Email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var user = _con.Users.Where(u => u.Email == Email).FirstOrDefault();
+
+    @if (user.type == "Admin")
+    {
+        @model IEnumerable<dynamic>
+        if (Model.Any())
+        {
+            <table border cellspacing=0 cellpadding=5>
+                <thead>
+                    <tr>
+                     <th>رقم الرحله</th>
+                    <th>رقم القطار </th>
+                    <th>تاريخ الرحله</th>
+                    <th>عدد التذاكر المتاحه حاليا</th>
+                    <th>محطة القيام</th>
+                    <th>محطة الوصول</th>
+                    <th>سعر التذكرة</th>
+                    <th>درجة القطار</th>
+                    </tr>
+                </thead>
+                   <tbody>
+                    @foreach (var item in Model)
+                    {
+                        
+                        <tr>
+                        <td>@item.Journey_ID</td>
+                        <td>@item.TrainNumber</td>
+                        <td>@item.Date_Pickup.ToString("yyyy-MM-dd")</td>
+                        <td>@item.Number_of_available_tickets</td>
+                        <td>@item.Launching_Station</td>
+                        <td>@item.Destination</td>
+                        <td>@item.Journey_Price</td>
+                        <td>@item.Class</td>
+                        <td><a href="AddTicket?id=@item.Journey_ID">Add Tickets</a></td>
+                        </tr>
+                    }
+                    
+                    
+                   </tbody>
+            </table>
+        }
+        else
+        {
+            <h2>No trains !!</h2>
+        }
+
+    }
+    else
+    {
+                 <img src="../Images/access.jpeg" />
+    }
+}
+else
+{
+         <a asp-controller="Users" asp-action="SignIn"> <img src="../Images/login.jpeg" /> </a>
+}

@@ -1,0 +1,72 @@
+/*html {
+  font-size: 14px;
+}*/
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=submit][class=btn1] {
+    border-color: black;
+    background-color: blue;
+    margin-right: 2px;
+    margin-left: 200px;
+    color: white;
+}
+input[type=submit][class=btn2] {
+    border-color: black;
+    background-color: blue;
+    margin-right: 2px;
+    color: white;
+}
+input[type=submit][class=btn1]:hover{
+    background-color: orangered;
+    
+}
+input[type=submit][class=btn2]:hover {
+    background-color: orangered;
+}
+.nav-item1:hover {
+    background-color: red;
+    font-size: larger;
+}
+.nav-item11{
+    background-color:blueviolet;
+    margin-left:10px
+}
+.nav-item12 {
+    background-color: blueviolet;
+    margin-left:10px;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+.nav-item13 {
+    border-color: black;
+    background-color: darkred;
+    margin-right: 2px;
+    margin-left: 20px;
+    color: white;
+}

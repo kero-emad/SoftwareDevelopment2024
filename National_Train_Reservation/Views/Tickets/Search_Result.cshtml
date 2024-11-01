@@ -1,0 +1,41 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Results";
+}
+<head>
+    <title>Search Result</title>
+<link rel="stylesheet" href="../css/search_result.css">
+</head>
+<table border cellspacing=0 cellpadding=5>
+    <thead>
+        <tr>
+            <th>رقم القطار</th>
+            <th>محطة الانطلاق</th>
+            <th>محطة الوصول</th>
+            <th>درجة القطار</th>     
+            <th>وقت القيام</th>
+            <th>وقت الوصول</th>
+            <th>عدد التوقفات</th>
+            <th>تكلفة الرحلة</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            
+            <tr>
+                            
+                                <td>@item.TrainNumber</td>
+                                <td>@item.Launching_Station</td>
+                                <td>@item.Destination</td>
+                                <td>@item.Class</td>
+                                <td>@item.Time_Pickup</td>
+                                <td>@item.Arrival_Time</td>
+                                <td>@item.Number_of_stoppages</td>
+                                <td>@item.Journey_Price</td>
+                                <td><a href="Book?id=@item.Journey_ID&amp;from=@item.Launching_Station&amp;to=@item.Destination&amp;TrainNumber=@item.TrainNumber&amp;Class=@item.Class&amp;Time_Pickup=@item.Time_Pickup&amp;Arrival_Time=@item.Arrival_Time&amp;Price=@item.Journey_Price&amp;" title="Go To payment">Book</a></td>  
+                </tr>
+        }
+    </tbody>
+</table>

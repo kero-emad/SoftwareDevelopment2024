@@ -1,0 +1,93 @@
+﻿@using System.Security.Claims
+@using National_Train_Reservation.Data
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "View Tickets";
+}
+
+<head>
+    <title>View Tickets</title>
+    <link rel="stylesheet" href="../css/search_result.css">
+</head>
+
+@inject ApplicationDBcontext _con
+@if (User.Identity.IsAuthenticated)
+{
+    
+    string Email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var res = _con.Users.Where(u => u.Email == Email).FirstOrDefault();
+    <img src="~/Imgs/@res.imagepath" style="border-radius:50%; width:70px;height:70px"/>
+<body style="background-image: url('../Images/train/Train.jpeg');background-size:cover;"></body>
+@model IEnumerable<dynamic>
+
+    @if (Model.Any())
+    {
+        <table border cellspacing=0 cellpadding=5>
+            <thead>
+                <tr>
+                    <th>رقم التذكرة</th>
+                    <th>وقت القيام</th>
+                    <th> تاريخ القيام</th>
+                    <th>محطة الانطلاق</th>
+                    <th>محطة الوصول</th>
+                    <th>رقم عربة القطار</th>     
+                    <th>رقم المقعد</th>
+                    <th>تكلفة الرحلة</th>
+                    <th>درجة القطار</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        
+                        <th>@item.ID</th>
+                        <td>@item.Time_Pickup</td>
+                        <td>@item.Date_pickup.ToString("yyyy-MM-dd")</td>
+                        <td>@item.Pickup_Station</td>
+                        <td>@item.Destination</td>
+                        <td>@item.Train_Car_Number</td>
+                        <td>@item.Seat_Number</td>
+                        <td>@item.Ticket_Money</td>
+                        <td>@item.Class</td>
+                        @{
+                            TempData["tick_id"] = item.ID;
+                            TempData["tick_car"] = item.Train_Car_Number;
+                            TempData["tick_seat"] = item.Seat_Number;
+                            TempData["jour_id"] = item.Journey_ID;
+                        }
+
+                        @{
+                            if (item.Date_pickup >= DateTime.Today)
+                            {
+                               // <td><a href="Cancellation?id=@item.ID">Cancel Ticket</a></td>
+                                 <td><form asp-controller="Tickets" asp-action="View_Tickets" method="POST">
+                                 <input type="submit" value="Cancel Ticket"/>                  
+                                 </form></td> 
+                            }
+                           
+                        }
+                        
+                                   </tr> 
+                   
+                }
+            </tbody>
+        </table>
+    }
+
+    else
+    {
+        <h3>No Tickets to Show</h3>
+    }
+
+}
+else
+{
+         <a asp-controller="Users" asp-action="SignIn"> <img src="../Images/login.jpeg" /> </a>
+}

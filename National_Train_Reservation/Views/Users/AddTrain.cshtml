@@ -1,0 +1,234 @@
+﻿@using System.Security.Claims
+@using National_Train_Reservation.Models
+@using National_Train_Reservation.Controllers
+@using National_Train_Reservation.Data
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Add new jorney";
+}
+<head>
+    <title>Add Train</title>
+
+<link rel="stylesheet" href="../css/AddTrain.css">
+</head>
+
+@inject ApplicationDBcontext _con
+@if (User.Identity.IsAuthenticated) {
+    
+        string Email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var user = _con.Users.Where(u => u.Email == Email).FirstOrDefault();
+    
+    @if (user.type == "Admin")
+    {
+                <body style="background-image: url('../Images/100.jpg');background-size:cover;"></body>
+        <form method="post">
+                <div class="flex"></div>
+              <label>Train Number</label>
+              <input type="number" name="trainNumber" min=1 class="input" required /><br />
+              <label>Launching station</label>
+              <select name="launch" class="input" required>
+                      <option selected>
+                                    Cairo
+                                </option>
+                                <option>
+                                    Giza
+                                </option>
+                                <option>
+                                    Banha
+                                </option>
+                                <option>
+                                    Alexandria
+                                </option>
+                                <option>
+                                    Damanhour
+                                </option>
+                                <option>
+                                    Matrouh
+                                </option>
+                                <option>
+                                    Mansoura
+                                </option>
+                                <option>
+                                    Kafr El-Sheikh
+                                </option>
+                                <option>
+                                    Tanta
+                                </option>
+                                <option>
+                                    Shebeen El-Kom
+                                </option>
+                                <option>
+                                    Damietta
+                                </option>
+                                <option>
+                                    Port Said
+                                </option>
+                                <option>
+                                    Ismailia
+                                </option>
+                                <option>
+                                    Suez
+                                </option>
+                                <option>
+                                    Zagazig
+                                </option>
+                                <option>
+                                    Beni suef
+                                </option>
+                                 <option>
+                                   Faiyum
+                                 </option>
+                                <option>
+                                    Minya
+                                </option>
+                                <option>
+                                   Asyut        
+                                </option>
+                                <option>
+                                    Sohag
+                                </option>
+                                <option>
+                                    Qena
+                                </option>
+                                <option>
+                                    Luxor
+                                </option>
+                                <option>
+                                    Aswan
+                                </option>
+                                
+                            </select>
+
+
+              <label>Destination</label>
+
+              <select name="destination" class="input" required>
+                                    <option>
+                                            Cairo
+                                        </option>
+                                        <option>
+                                            Giza
+                                        </option>
+                                        <option>
+                                            Banha
+                                        </option>
+                                        <option selected>
+                                            Alexandria
+                                        </option>
+                                        <option>
+                                            Damanhour
+                                        </option>
+                                        <option>
+                                            Matrouh
+                                        </option>
+                                        <option>
+                                            Mansoura
+                                        </option>
+                                        <option>
+                                            Kafr El-Sheikh
+                                        </option>
+                                        <option>
+                                            Tanta
+                                        </option>
+                                        <option>
+                                            Shebeen El-Kom
+                                        </option>
+                                        <option>
+                                            Damietta
+                                        </option>
+                                        <option>
+                                            Port Said
+                                        </option>
+                                        <option>
+                                            Ismailia
+                                        </option>
+                                        <option>
+                                            Suez
+                                        </option>
+                                        <option>
+                                            Zagazig
+                                        </option>
+                                        <option>
+                                            Beni suef
+                                        </option>
+                                         <option>
+                                           Faiyum
+                                         </option>
+                                        <option>
+                                            Minya
+                                        </option>
+                                        <option>
+                                           Asyut        
+                                        </option>
+                                        <option>
+                                            Sohag
+                                        </option>
+                                        <option>
+                                            Qena
+                                        </option>
+                                        <option>
+                                            Luxor
+                                        </option>
+                                        <option>
+                                            Aswan
+                                        </option>
+
+                                    </select>
+
+
+              <label>Class</label>
+              
+              <select name="Class" required>
+                  <option>
+                      VIP
+                  </option>
+                  <option>
+                      Sleep
+                  </option>
+                  <option>
+                     Special service
+                  </option>
+                  <option>
+                      AC1
+                  </option>
+                   <option>
+                     AC2
+                   </option>
+                   <option>
+                     AC3
+                  </option>
+                  
+
+
+              </select>
+
+              <br />
+              <label>Number of stoppages</label>
+              <input type="number" name="stop" min=0 class="input" required/><br />
+              <label>Price</label>
+              <input type="number" name="price" class="input" min=10 required/><br />
+              <label>Date pickup</label>
+              <input type="date" name="data_pickup" class="input" required/><br />
+              <label>Time pickup</label>
+              <input type="time" name="time_pickup" class="input" required/><br />
+              <label>Arrival Time</label>
+              <input type="time" name="arrival_time" class="input" required /><br />
+              <input type="submit" value="Add Train" class="submit" />
+        </form>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    }
+    else
+    {
+                <img src="../Images/access.jpeg" />
+    }
+
+}
+else
+{
+             <a asp-controller="Users" asp-action="SignIn"> <img src="../Images/login.jpeg" /> </a>
+}
+

@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Booking";
+}
+<head>
+    <title>Book</title>
+    <link rel="stylesheet" href="../css/Book.css" />
+</head>
+<body>
+<div class="container">
+      <form method="post" asp-controller="Tickets" asp-action="Book">
+        <div class="user-box">
+          <label>Train Number</label>
+          <input type="number" value=@Context.Request.Query["TrainNumber"]
+          readonly />
+        </div>
+        <div class="user-box">
+          <label>From</label>
+          <input type="text" value=@Context.Request.Query["from"] readonly />
+        </div>
+        <div class="user-box">
+          <label>To</label>
+          <input type="text" value=@Context.Request.Query["to"] readonly /><br />
+        </div>
+        <div class="user-box">
+          <label>Class</label>
+          <input type="text" value=@Context.Request.Query["Class"] readonly />
+        </div>
+        <div class="user-box">
+          <label>Time Pickup</label>
+          <input type="text" value=@Context.Request.Query["Time_Pickup"]
+          readonly />
+        </div>
+        <div class="user-box">
+          <label>Arrival Time</label>
+          <input type="text" value=@Context.Request.Query["Arrival_Time"]
+          readonly />
+        </div>
+        <div class="user-box">
+          <label>Price</label>
+          <input type="number" value=@Context.Request.Query["Price"] readonly />
+        </div>
+        <div class="user-box">
+          <label>Car number</label>
+          <input type="text" name="Car_number" value=@ViewBag.car readonly/>
+        </div>
+        <div class="user-box">
+          <label>Seat number</label>
+          <input type="text" name="Seat_number" value=@ViewBag.seat readonly/>
+        </div>
+        <div class="user-box">
+          <label>Journey_ID</label>
+          <input type="text" name="Journey_ID"
+          Value=@Context.Request.Query["id"] readonly/>
+        </div>
+        <div class="submit-btn">
+          <input type="submit" value="Go to Payment" />
+          <span></span>
+        </div>
+      </form>
+    </div>
+    </body>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>National Train Reservation</title>
+  <link rel="stylesheet" href="~/css/signup.css">
+</head>
+<body>
+    <div class="background">
+        <div class="register-form">
+            <h2>National Train Reservation</h2>
+            <form asp-controller="Users" asp-action="SignUp" method="post" enctype="multipart/form-data">
+                <label for="Frist name">Frist Name:</label>
+                <input type="text" name="Frist Name" id="Frist name" minlength=3 placeholder="Please Enter your First name" required>
+
+                <label for="Last name">Last Name:</label>
+                <input type="text" name="Last name" id="Last name" minlength=3 placeholder="Please Enter your Last name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Please Enter your email (ex.xxxx@yahoo.com)" required>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Please Enter Strong password (letters,capital&small letters and sympols"required>
+
+
+                <label for="Phone Number">Phone Number:</label>
+                <input type="tel" name="Phone Number" id="Phone Number" placeholder="Enter your phone number starts with 01" required>
+
+                <label for="National Number">National Number:</label>
+                <input type="tel" name="National Number" id="departure-date" minlength=14 maxlength=14 placeholder="Please Enter your national number of 14 numbers" required>
+
+               <label for="Gender">Gender:</label>
+                <select name="gender" required>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+
+                <label for="image">Image:</label>
+                <input type="file" name="img" id="image" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</body>
+</html>
