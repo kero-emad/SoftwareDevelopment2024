@@ -238,12 +238,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 <p align="center">
   Made with ❤️ using ASP.NET Core MVC
 </p>
